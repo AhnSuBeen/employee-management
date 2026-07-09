@@ -4,8 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Development workflow
 
-This is a local, git-free assignment — no version control, branches, or PRs. The workflow is:
-spec (`docs/specs/`) → plan (`docs/plans/`) → explicit user approval → implementation → local
+`main` is protected on GitHub — no direct commits, PR required to merge. The workflow is:
+spec (`docs/specs/`) → plan (`docs/plans/`) → explicit user approval → implementation on a
+`feature/<slug>` branch (commits split into meaningful units) → PR into `main` → local
 verification. No code changes before an approved plan, and no scope beyond what the spec covers.
 Full rules: `.claude/rules/development-workflow.md`.
 
