@@ -3,10 +3,9 @@
 Spec: `docs/specs/employee-management-spec.md`
 
 ## 현재 상태 확인
-- 이 프로젝트는 git을 쓰지 않는 로컬 과제다 — 브랜치·커밋·PR 단계는 없다. 파일을 바로
-  작업 디렉터리에 작성한다.
 - 코드베이스는 Spring Initializr 스켈레톤뿐이며(`EmployeeManagementApplication.java`만 존재),
   `application.yaml`에는 PostgreSQL datasource가 아직 없다.
+- 구현 전 현재 Git 상태와 기준 브랜치를 확인하고, 기능 작업은 별도의 작업 브랜치에서 진행한다.
 
 ## 접근 방식
 - 전통적인 Spring MVC + Thymeleaf 애플리케이션으로 구현한다 (확정). JSON REST API는
@@ -81,7 +80,7 @@ Spec: `docs/specs/employee-management-spec.md`
    로컬에서 `./gradlew.bat bootRun`으로 실행해 브라우저로 F-01~F-04 전 항목을 확인하고,
    `docs/specs/employee-management-spec.md`의 체크리스트와 대조한다.
 
-## 작업 순서 (git 없음 — 커밋 단위 대신 진행 순서)
+## 작업 순서
 1. 환경설정 + 공통 감사 베이스
 2. 도메인 모델 + 리포지토리
 3. 서비스 (상태 전이 로직 포함)

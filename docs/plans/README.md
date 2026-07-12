@@ -1,29 +1,27 @@
-# Plans
+# 계획서(Plans)
 
-A plan captures **how** to implement an already-approved spec. One file per feature/change,
-named `<feature-slug>.md` matching the spec of the same slug in `docs/specs/`.
+계획서는 이미 승인된 스펙을 **어떻게 구현할지** 정리한 문서다.
+기능 또는 변경사항마다 계획서 파일을 하나씩 작성하며, 파일명은 <feature-slug>.md 형식을 따른다.
+이 파일명은 `docs/specs/`에 있는 동일한 슬러그의 스펙 파일과 일치해야 한다.
 
-A plan is not written until its spec is settled, and no code is written until the plan itself is
-explicitly approved by the user. See `.claude/rules/development-workflow.md`.
+계획서는 스펙이 확정되기 전에는 작성하지 않는다. 또한 계획서 자체가 사용자에게 명시적으로 승인되기 전에는 코드를 작성하지 않는다.
+관련 규칙은 .claude/rules/development-workflow.md 문서를 참고한다.
 
-This is a git-free local project — plans have no branch/commit section, just an implementation
-order.
-
-## Template
+## 템플릿
 
 ```markdown
-# <Feature name> — implementation plan
+# <기능 이름> — 구현 계획
 
-Spec: docs/specs/<feature-slug>.md
+스펙: docs/specs/<feature-slug>.md
 
-## Approach
-High-level strategy and any alternatives considered.
+## 접근 방식
+전체적인 구현 전략과 검토한 대안을 작성한다.
 
-## Steps
-1. Step one — files/modules touched
-2. Step two — files/modules touched
+## 구현 단계
+1. 첫 번째 단계 — 수정하거나 생성할 파일/모듈
+2. 두 번째 단계 — 수정하거나 생성할 파일/모듈
 3. ...
 
-## Risks / open questions
-Anything uncertain that should be flagged before or during implementation.
+## 리스크 / 미해결 질문
+구현 전이나 구현 중에 확인해야 할 불확실한 사항을 작성한다.
 ```

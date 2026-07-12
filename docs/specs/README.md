@@ -1,30 +1,33 @@
-# Specs
+# 스펙(Specs)
 
-A spec captures **what** to build and **why**, before any planning or code. One file per
-feature/change, named `<feature-slug>.md` (kebab-case, matching the plan of the same slug in
-`docs/plans/`).
+스펙은 계획을 세우거나 코드를 작성하기 전에 **무엇을 만들 것인지(What)** 그리고 **왜 만드는지(Why)**를 정의하는 문서다.
+각 기능 또는 변경사항마다 하나의 스펙 파일을 작성하며, 파일명은 <feature-slug>.md 형식을 따른다.
+`docs/plans/`에 있는 동일한 기능의 계획서 파일명과 일치해야 한다.
 
-See `.claude/rules/development-workflow.md` for how specs fit into the overall workflow.
+스펙이 전체 개발 워크플로에서 어떻게 사용되는지는 .claude/rules/development-workflow.md 문서를 참고한다.
 
-## Template
+## 템플릿
 
 ```markdown
-# <Feature name>
+# <기능 이름>
 
-## Problem / motivation
-Why is this needed? What's the current pain or gap?
+## 문제 / 동기
+왜 이 기능이 필요한가?
+현재 어떤 불편이나 문제가 존재하는가?
+현재 시스템에 어떤 부족한 점이나 해결해야 할 공백이 있는가?
 
-## Requirements
-- Functional requirement 1
-- Functional requirement 2
+## 요구사항
+- 기능 요구사항 1
+- 기능 요구사항 2
 
-## Acceptance criteria
-- [ ] Criterion 1
-- [ ] Criterion 2
+## 수용 기준
+수용 기준은 기능 구현이 완료되었는지를 객관적으로 판단할 수 있도록 작성한다.
+- [ ] 기준 1
+- [ ] 기준 2
 
-## Out of scope
-- Explicitly excluded items, to prevent scope creep during implementation.
+## 범위 외 항목
+구현 과정에서 범위가 불필요하게 확대되는 것을 방지하기 위해 명시적으로 제외할 항목을 작성한다.
 
-## Open questions
-- Anything ambiguous that needs an answer from the user before planning starts.
+## 미해결 질문
+계획 작성을 시작하기 전에 사용자에게 답변을 받아야 하는 모호하거나 결정되지 않은 사항을 작성한다.
 ```
