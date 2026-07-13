@@ -21,8 +21,10 @@
                         <label for="filterPosition">직급</label>
                         <input type="text" id="filterPosition" name="position" th:value="${positionFilter}">
                     </div>
-                    <button type="submit">검색</button>
-                    <a class="btn" th:href="@{/employees}">초기화</a>
+                    <div class="filter-actions">
+                        <button type="submit">검색</button>
+                        <a class="btn" th:href="@{/employees}">초기화</a>
+                    </div>
                 </form>
             </aside>
             <div class="list-content">

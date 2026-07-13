@@ -119,8 +119,17 @@ tbody tr.dept-group-row td {
     font-size: 1rem;
 }
 
-.filter-sidebar .btn {
+.filter-actions {
+    display: flex;
+    gap: 0.5rem;
     margin-top: 0.5rem;
+}
+
+.filter-actions button,
+.filter-actions .btn {
+    flex: 1;
+    margin-top: 0;
+    text-align: center;
 }
 
 .list-content {
