@@ -22,7 +22,7 @@ header.site-header nav a:hover {
 }
 
 main {
-    max-width: 960px;
+    max-width: 1180px;
     margin: 0 auto;
     padding: 2rem;
 }
@@ -36,6 +36,7 @@ th, td {
     border: 1px solid #dde3ea;
     padding: 0.6rem 0.8rem;
     text-align: left;
+    white-space: nowrap;
 }
 
 th {
@@ -99,6 +100,36 @@ tbody tr.dept-group-row td {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     padding: 1.5rem 2rem;
     margin-top: 1rem;
+}
+
+.list-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.filter-sidebar {
+    width: 220px;
+    flex-shrink: 0;
+    padding: 1.25rem 1.5rem;
+}
+
+.filter-sidebar h2 {
+    margin-top: 0;
+    font-size: 1rem;
+}
+
+.filter-sidebar .btn {
+    margin-top: 0.5rem;
+}
+
+.list-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.list-content .card {
+    overflow-x: auto;
 }
 
 .detail-grid {
