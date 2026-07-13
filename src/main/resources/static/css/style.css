@@ -43,8 +43,14 @@ th {
     color: #fff;
 }
 
-tbody tr:nth-child(even) {
+tbody tr.row-alt {
     background-color: #eef2f7;
+}
+
+tbody tr.dept-group-row td {
+    background-color: #d7dfea;
+    color: #1a2744;
+    font-weight: bold;
 }
 
 .badge {

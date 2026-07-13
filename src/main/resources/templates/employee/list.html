@@ -19,17 +19,23 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="employee : ${employees}">
-                        <td>
-                            <a th:href="@{/employees/{id}(id=${employee.id})}" th:text="${employee.name}">이름</a>
-                        </td>
-                        <td th:text="${employee.department}">부서</td>
-                        <td th:text="${employee.position}">직급</td>
-                        <td th:text="${employee.email}">이메일</td>
-                        <td th:text="${employee.phone}">전화번호</td>
-                        <td th:text="${employee.hireDate}">입사일</td>
-                        <td><span th:replace="~{fragments/layout :: statusBadge(${employee.status})}"></span></td>
-                    </tr>
+                    <th:block th:each="employee, iterStat : ${employees}">
+                        <tr class="dept-group-row"
+                            th:if="${iterStat.index == 0 or employees[iterStat.index - 1].department != employee.department}">
+                            <td colspan="7" th:text="${employee.department}">부서</td>
+                        </tr>
+                        <tr th:classappend="${iterStat.index % 2 == 1} ? 'row-alt' : ''">
+                            <td>
+                                <a th:href="@{/employees/{id}(id=${employee.id})}" th:text="${employee.name}">이름</a>
+                            </td>
+                            <td th:text="${employee.department}">부서</td>
+                            <td th:text="${employee.position}">직급</td>
+                            <td th:text="${employee.email}">이메일</td>
+                            <td th:text="${employee.phone}">전화번호</td>
+                            <td th:text="${employee.hireDate}">입사일</td>
+                            <td><span th:replace="~{fragments/layout :: statusBadge(${employee.status})}"></span></td>
+                        </tr>
+                    </th:block>
                 </tbody>
             </table>
         </div>
