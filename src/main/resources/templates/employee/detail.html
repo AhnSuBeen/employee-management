@@ -5,33 +5,47 @@
     <header th:replace="~{fragments/layout :: nav}"></header>
     <main>
         <h1 th:text="${employee.name}">직원 상세</h1>
-        <dl>
-            <dt>🏢 부서</dt>
-            <dd th:text="${employee.department}">부서</dd>
-            <dt>💼 직급</dt>
-            <dd th:text="${employee.position}">직급</dd>
-            <dt>✉️ 이메일</dt>
-            <dd th:text="${employee.email}">이메일</dd>
-            <dt>📞 전화번호</dt>
-            <dd th:text="${employee.phone}">전화번호</dd>
-            <dt>📅 입사일</dt>
-            <dd th:text="${employee.hireDate}">입사일</dd>
-            <dt>🚦 상태</dt>
-            <dd>
-                <span th:replace="~{fragments/layout :: statusBadge(${employee.status})}"></span>
-            </dd>
-        </dl>
+        <div class="card">
+            <div class="detail-grid">
+                <div class="detail-field">
+                    <span class="detail-label">부서</span>
+                    <span class="detail-value" th:text="${employee.department}">부서</span>
+                </div>
+                <div class="detail-field">
+                    <span class="detail-label">직급</span>
+                    <span class="detail-value" th:text="${employee.position}">직급</span>
+                </div>
+                <div class="detail-field">
+                    <span class="detail-label">이메일</span>
+                    <span class="detail-value" th:text="${employee.email}">이메일</span>
+                </div>
+                <div class="detail-field">
+                    <span class="detail-label">전화번호</span>
+                    <span class="detail-value" th:text="${employee.phone}">전화번호</span>
+                </div>
+                <div class="detail-field">
+                    <span class="detail-label">입사일</span>
+                    <span class="detail-value" th:text="${employee.hireDate}">입사일</span>
+                </div>
+                <div class="detail-field">
+                    <span class="detail-label">상태</span>
+                    <span class="detail-value">
+                        <span th:replace="~{fragments/layout :: statusBadge(${employee.status})}"></span>
+                    </span>
+                </div>
+            </div>
 
-        <p>
-            <a class="btn" th:href="@{/employees/{id}/edit(id=${employee.id})}">✏️ 수정</a>
-        </p>
+            <p>
+                <a class="btn" th:href="@{/employees/{id}/edit(id=${employee.id})}">수정</a>
+            </p>
 
-        <div class="status-actions" th:if="${!nextStatuses.isEmpty()}">
-            <span>상태 변경:</span>
-            <form th:each="next : ${nextStatuses}" method="post" th:action="@{/employees/{id}/status(id=${employee.id})}">
-                <input type="hidden" name="status" th:value="${next}">
-                <button type="submit" th:text="${next}">상태</button>
-            </form>
+            <div class="status-actions" th:if="${!nextStatuses.isEmpty()}">
+                <span>상태 변경:</span>
+                <form th:each="next : ${nextStatuses}" method="post" th:action="@{/employees/{id}/status(id=${employee.id})}">
+                    <input type="hidden" name="status" th:value="${next}">
+                    <button type="submit" th:text="${next}">상태</button>
+                </form>
+            </div>
         </div>
     </main>
 </body>

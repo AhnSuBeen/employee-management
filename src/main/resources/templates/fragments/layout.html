@@ -8,13 +8,13 @@
 <body>
     <header class="site-header" th:fragment="nav">
         <nav>
-            <a th:href="@{/employees}">📋 직원 목록</a>
-            <a th:href="@{/employees/new}">➕ 직원 등록</a>
+            <a th:href="@{/employees}">직원 목록</a>
+            <a th:href="@{/employees/new}">직원 등록</a>
         </nav>
     </header>
 
     <span th:fragment="statusBadge(status)" class="badge"
           th:classappend="'badge-' + ${#strings.replace(#strings.toLowerCase(status.name()), '_', '-')}"
-          th:text="${(status.name() == 'ACTIVE' ? '🟢 ' : (status.name() == 'ON_LEAVE' ? '🟡 ' : '⚪ ')) + status}">상태</span>
+          th:text="${status}">상태</span>
 </body>
 </html>

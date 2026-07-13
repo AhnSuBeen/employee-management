@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.StringUtils;
 
 import com.example.employeemanagement.employee.dto.EmployeeForm;
 
@@ -24,8 +25,12 @@ public class EmployeeService {
         this.employeeRepository = employeeRepository;
     }
 
-    public List<Employee> findAll() {
-        return employeeRepository.findAll();
+    public List<Employee> findAll(String name, String department, String position) {
+        return employeeRepository.search(normalize(name), normalize(department), normalize(position));
+    }
+
+    private String normalize(String value) {
+        return StringUtils.hasText(value) ? value.trim() : "";
     }
 
     public Employee findById(Long id) {

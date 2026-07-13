@@ -25,8 +25,14 @@ public class EmployeeController {
     }
 
     @GetMapping
-    public String list(Model model) {
-        model.addAttribute("employees", employeeService.findAll());
+    public String list(@RequestParam(required = false) String name,
+            @RequestParam(required = false) String department,
+            @RequestParam(required = false) String position,
+            Model model) {
+        model.addAttribute("employees", employeeService.findAll(name, department, position));
+        model.addAttribute("nameFilter", name);
+        model.addAttribute("departmentFilter", department);
+        model.addAttribute("positionFilter", position);
         return "employee/list";
     }
 
