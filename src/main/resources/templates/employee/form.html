@@ -9,36 +9,36 @@
               th:action="${isEdit} ? @{/employees/{id}(id=${employeeId})} : @{/employees}"
               method="post">
             <div class="form-row">
-                <label for="name">👤 이름</label>
+                <label for="name">이름</label>
                 <input type="text" id="name" th:field="*{name}">
                 <span class="error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">이름 오류</span>
             </div>
             <div class="form-row">
-                <label for="department">🏢 부서</label>
+                <label for="department">부서</label>
                 <input type="text" id="department" th:field="*{department}">
                 <span class="error" th:if="${#fields.hasErrors('department')}" th:errors="*{department}">부서 오류</span>
             </div>
             <div class="form-row">
-                <label for="position">💼 직급</label>
+                <label for="position">직급</label>
                 <input type="text" id="position" th:field="*{position}">
                 <span class="error" th:if="${#fields.hasErrors('position')}" th:errors="*{position}">직급 오류</span>
             </div>
             <div class="form-row">
-                <label for="email">✉️ 이메일</label>
+                <label for="email">이메일</label>
                 <input type="text" id="email" th:field="*{email}">
                 <span class="error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">이메일 오류</span>
             </div>
             <div class="form-row">
-                <label for="phone">📞 전화번호</label>
+                <label for="phone">전화번호</label>
                 <input type="text" id="phone" th:field="*{phone}" placeholder="010-1234-5678">
                 <span class="error" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}">전화번호 오류</span>
             </div>
             <div class="form-row">
-                <label for="hireDate">📅 입사일</label>
+                <label for="hireDate">입사일</label>
                 <input type="date" id="hireDate" th:field="*{hireDate}">
                 <span class="error" th:if="${#fields.hasErrors('hireDate')}" th:errors="*{hireDate}">입사일 오류</span>
             </div>
-            <button type="submit">💾 저장</button>
+            <button type="submit">저장</button>
         </form>
     </main>
 </body>

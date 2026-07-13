@@ -6,17 +6,17 @@
     <main>
         <h1 th:text="${employee.name}">직원 상세</h1>
         <dl>
-            <dt>🏢 부서</dt>
+            <dt>부서</dt>
             <dd th:text="${employee.department}">부서</dd>
-            <dt>💼 직급</dt>
+            <dt>직급</dt>
             <dd th:text="${employee.position}">직급</dd>
-            <dt>✉️ 이메일</dt>
+            <dt>이메일</dt>
             <dd th:text="${employee.email}">이메일</dd>
-            <dt>📞 전화번호</dt>
+            <dt>전화번호</dt>
             <dd th:text="${employee.phone}">전화번호</dd>
-            <dt>📅 입사일</dt>
+            <dt>입사일</dt>
             <dd th:text="${employee.hireDate}">입사일</dd>
-            <dt>🚦 상태</dt>
+            <dt>상태</dt>
             <dd>
                 <span th:replace="~{fragments/layout :: statusBadge(${employee.status})}"></span>
             </dd>
