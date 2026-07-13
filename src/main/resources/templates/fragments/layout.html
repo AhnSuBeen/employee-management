@@ -15,6 +15,6 @@
 
     <span th:fragment="statusBadge(status)" class="badge"
           th:classappend="'badge-' + ${#strings.replace(#strings.toLowerCase(status.name()), '_', '-')}"
-          th:text="${(status.name() == 'ACTIVE' ? '🟢 ' : (status.name() == 'ON_LEAVE' ? '🟡 ' : '⚪ ')) + status}">상태</span>
+          th:text="${status}">상태</span>
 </body>
 </html>
