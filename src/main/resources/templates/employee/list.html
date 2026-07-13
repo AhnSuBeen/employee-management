@@ -5,32 +5,34 @@
     <header th:replace="~{fragments/layout :: nav}"></header>
     <main>
         <h1>직원 목록</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>이름</th>
-                    <th>부서</th>
-                    <th>직급</th>
-                    <th>이메일</th>
-                    <th>전화번호</th>
-                    <th>입사일</th>
-                    <th>상태</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:each="employee : ${employees}">
-                    <td>
-                        <a th:href="@{/employees/{id}(id=${employee.id})}" th:text="${employee.name}">이름</a>
-                    </td>
-                    <td th:text="${employee.department}">부서</td>
-                    <td th:text="${employee.position}">직급</td>
-                    <td th:text="${employee.email}">이메일</td>
-                    <td th:text="${employee.phone}">전화번호</td>
-                    <td th:text="${employee.hireDate}">입사일</td>
-                    <td><span th:replace="~{fragments/layout :: statusBadge(${employee.status})}"></span></td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="card">
+            <table>
+                <thead>
+                    <tr>
+                        <th>이름</th>
+                        <th>부서</th>
+                        <th>직급</th>
+                        <th>이메일</th>
+                        <th>전화번호</th>
+                        <th>입사일</th>
+                        <th>상태</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="employee : ${employees}">
+                        <td>
+                            <a th:href="@{/employees/{id}(id=${employee.id})}" th:text="${employee.name}">이름</a>
+                        </td>
+                        <td th:text="${employee.department}">부서</td>
+                        <td th:text="${employee.position}">직급</td>
+                        <td th:text="${employee.email}">이메일</td>
+                        <td th:text="${employee.phone}">전화번호</td>
+                        <td th:text="${employee.hireDate}">입사일</td>
+                        <td><span th:replace="~{fragments/layout :: statusBadge(${employee.status})}"></span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </main>
 </body>
 </html>

@@ -30,9 +30,6 @@ main {
 table {
     border-collapse: collapse;
     width: 100%;
-    margin-top: 1rem;
-    background-color: #fff;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 th, td {
@@ -90,7 +87,7 @@ tbody tr:nth-child(even) {
     margin-right: 0.5rem;
 }
 
-.detail-card {
+.card {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -123,13 +120,13 @@ tbody tr:nth-child(even) {
     color: #222;
 }
 
-.detail-card > p {
+.card > p {
     margin-top: 1.5rem;
     padding-top: 1.5rem;
     border-top: 1px solid #dde3ea;
 }
 
-.detail-card .status-actions {
+.card .status-actions {
     margin-top: 1rem;
     padding-top: 1rem;
     border-top: 1px solid #dde3ea;
